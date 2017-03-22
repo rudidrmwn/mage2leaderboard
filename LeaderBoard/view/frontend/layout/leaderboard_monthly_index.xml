@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/
+Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    </head>
+    <body>
+         <referenceContainer name="content">
+            <block class="AppName\LeaderBoard\Block\LeaderBoardBlock"
+                name="appname_leaderboard_monthly"
+                template="appname_LeaderBoard::leaderboard_monthly.phtml" />
+        </referenceContainer>
+    </body>
+</page>

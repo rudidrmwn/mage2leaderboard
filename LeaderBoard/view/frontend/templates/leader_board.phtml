@@ -1,0 +1,36 @@
+ <?php 
+
+$topBuyerAllPeriods=$block->getTopBuyerList();
+
+$title =$block->getHeadTitle();
+$description = $block->getDescription();
+
+$display='<div style="margin: 10px;">
+       <ul class="nav nav-pills">
+		  <li class="active"><a href="index">All</a></li>
+		  <li><a href="today">Today</a></li>
+		  <li><a href="weekly">Weekly</a></li>
+		  <li><a href="monthly">Monthly</a></li>
+		</ul>
+		</div>
+		<div class="table-responsive">
+		<table class="table table-bordered">
+           <thead>
+		      <tr>
+		        <th>Customer Name</th>
+		        <th>Customer Rank</th>
+		      </tr>
+		    </thead>
+		    <tbody>';
+		 foreach ($topBuyerAllPeriods as $key => $value) {
+$display.=	   '<tr>
+		      	    <td>'.$value['CustomerName'].'</td>
+		      	    <td>'.($key+1).'</td>
+		      	</tr>';
+		      }     
+$display.='</tbody>
+        </table>
+        </div>'; 
+echo "<h5>".$title."</h5>";
+echo "<h6>".$description."</h6>";
+echo $display;

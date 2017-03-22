@@ -1,0 +1,49 @@
+ <?php 
+$topBuyerToday=$block->getTopBuyerToday();
+
+
+$title =$block->getHeadTitle();
+$description = $block->getDescription();
+
+if(is_array($topBuyerToday)):
+$display='<div style="margin: 10px;">
+       <ul class="nav nav-pills">
+		  <li><a href="index">All</a></li>
+		  <li class="active"><a href="today">Today</a></li>
+		  <li><a href="weekly">Weekly</a></li>
+		  <li><a href="monthly">Monthly</a></li>
+		</ul>
+		</div>
+		<div class="table-responsive">
+		<table class="table table-bordered">
+           <thead>
+		      <tr>
+		        <th>Customer Name</th>
+		        <th>Customer Rank</th>
+		      </tr>
+		    </thead>
+		    <tbody>';
+		 foreach ($topBuyerToday as $key => $value) {
+$display.=	   '<tr>
+		      	    <td>'.$value['CustomerName'].'</td>
+		      	    <td>'.($key+1).'</td>
+		      	</tr>';
+		      }     
+$display.='</tbody>
+        </table>
+        </div>'; 
+else:
+$display='<div style="margin: 10px;">
+   <ul class="nav nav-pills">
+	  <li><a href="index">All</a></li>
+	  <li class="active"><a href="today">Today</a></li>
+	  <li><a href="weekly">Weekly</a></li>
+	  <li><a href="monthly">Monthly</a></li>
+	</ul>
+	</div>';
+$display.= $topBuyerToday;
+endif;
+
+echo "<h5>".$title."</h5>";
+echo "<h6>".$description."</h6>";
+echo $display;
