@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+ 
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/system_file.xsd">
+    <system>
+        <tab id="AppName" translate="label" sortOrder="1">
+            <label>AppName</label>
+        </tab>
+        <section id="rewardpoints" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Reward Points</label>
+            <tab>AppName</tab>
+            <resource>AppName_RewardPoints::system_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable_in_frontend" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable in frontend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="head_title" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Head title</label>
+                    <comment>Fill head title of Reward Points page at here</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="registrationpoints" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label> Set a value of the points when the customer has been registration</label> 
+                    <validate>required-entry</validate>
+                </field>
+                <field id="firstpurchasedpoints" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Set a value of the points when the customer did the first purchased</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="sharetofb" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label> Set a value of the points when the customer has shared the points to facebook</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="sharetotwitter" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Set a value of the points when the customer has shared the points to twitter</label>
+                    <validate>require-entry</validate>
+                </field>
+            </group>
+        </section>
+        <section id="dailyreward" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Daily Rewards</label>
+            <tab>AppName</tab>
+            <resource>AppName_RewardPoints::system_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Setting Daily Rewards</label>
+                <comment>Discount in percentage(%) and Point in numeric</comment>     
+                <field id="monday_reward_type" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Monday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="monday_reward_value" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monday Reward Value</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="tuesday_reward_type" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Tuesday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="tuesday_reward_value" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday Reward Value</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="wednesday_reward_type" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Wednesday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="wednesday_reward_value" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday Reward Value</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="thursday_reward_type" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Thursday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="thursday_reward_value" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday Reward Value</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="friday_reward_type" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Friday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="friday_reward_value" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday Reward</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="saturday_reward_type" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Saturday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="saturday_reward_value" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday Reward Value</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="sunday_reward_type" translate="label" type="select" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <source_model>AppName\RewardPoints\Model\System\Config\DailyReward</source_model>
+                    <label>Sunday Reward Type</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="sunday_reward_value" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday Reward Value</label>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

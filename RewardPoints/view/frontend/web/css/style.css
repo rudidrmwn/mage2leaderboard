@@ -1,0 +1,34 @@
+.rewardpoints > ul {
+   list-style: none;
+   padding: 0;
+}
+.rewardpoints > ul li {
+   padding: 10px 5px;
+   margin: 0;
+   background-color: #fff;
+   border-bottom: 1px #c4c1bc solid;
+   display: inline-block;
+   width: 100%;
+}
+.rewardpoints > ul li:last-child {
+   border-bottom: none;
+}
+.rewardpoints-list {
+   float: left;
+   position: relative;
+   margin-left: 10px;
+   width: 100%;
+}
+.rewardpoints-list a.point-title {
+   font-weight: bold;
+}
+.rewardpoints-list a.points-title:hover {
+   text-decoration: none;
+}
+.block-rewardpoints .block-title {
+   margin: 0px 0px 20px;
+}
+.block-rewardpoints-heading {
+   font-size: 18px;
+   font-weight: 300;
+}

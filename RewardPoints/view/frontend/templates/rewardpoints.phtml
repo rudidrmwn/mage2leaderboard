@@ -1,0 +1,43 @@
+<?php
+//Checking the customer has been login
+$login= $block->customerLogin();
+$customerID=$block->getSessionCustomerID();
+$points=$block->getCustomerPoints($customerID);
+echo "My Points: ".$points."<br/>";
+
+//Checking the first purchased to get the points
+$block->firstPurchasedPoints($customerID);
+
+// var_dump($block->getDetailPoints($_SESSION['customer_base']['customer_id']));
+if(!empty($block->getDetailPoints($customerID))):
+?>
+<div class="table-responsive">
+<table class="table table-bordered" border="1">
+<thead>
+	<tr>
+	    <td><b>DateTime Activity</b></td>
+	    <td><b>Points</b></td>
+	    <td><b>Customer Activity<b></td>
+	</tr>
+</thead>
+<tbody>
+<?php
+foreach($block->getDetailPoints($customerID) as $arrIndexes=>$arrValues):
+	$datetime=date_create($arrValues['date_activity']);
+   ?>
+	<tr>
+        <td><?php echo date_format($datetime,"d/m/Y h:i:s");?></td>
+        <td><?php if($arrValues['status_note']=="Daily Reward Discount"){
+            echo $arrValues['reward_points']."%";  
+         }else{ 
+         	echo $arrValues['reward_points']; 
+         }?></td>
+        <td><?php echo $arrValues['status_note'];?></td>
+    <tr>
+	<?php
+endforeach;
+endif;
+?>
+</tbody>
+</table>
+</div>

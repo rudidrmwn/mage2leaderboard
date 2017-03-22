@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+ 
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Core/etc/config.xsd">
+    <default>
+        <rewardpoints>
+            <general>
+                <enable_in_frontend>1</enable_in_frontend>
+                <head_title>AppName - Reward Points</head_title>
+                <reward_points_position>1</reward_points_position>
+            </general>
+        </rewardpoints>
+    </default>
+</config>
